@@ -11,6 +11,14 @@ scripts and hooks are real and scrubbed; the sector/wardrobe content is template
 your tool inventory is not the author's. `INSTALL.md` walks an agent through generating
 yours.
 
+## Compatibility
+
+**Claude Code only, for now** — CLI, desktop app, or IDE extension. Nearly everything here
+is built from Claude Code's own machinery (plugins, hooks, `enabledPlugins`, `@`-imports),
+so unlike the companion NewBrain engine there is no degraded path through other chat apps.
+The multi-model adapters exist and are honest about their untested status. Full matrix:
+[docs/COMPATIBILITY.md](docs/COMPATIBILITY.md).
+
 ## Architecture
 
 ```mermaid
@@ -100,6 +108,15 @@ Note: `save-at-80.sh` depends on a statusline/monitor process writing
 `$TMPDIR/claude-ctx-<session>.json` with a `used_pct` field — it is a pattern to adapt, not
 a drop-in, unless you have such a monitor.
 
+## Documentation
+
+| Doc | What's in it |
+|---|---|
+| [docs/HOW-IT-WORKS.md](docs/HOW-IT-WORKS.md) | the deep walkthrough: all six pieces end-to-end (base → sectors → wardrobe → discovery hook → valet → local plugin), a worked example session, the install-scope lesson |
+| [docs/COMPATIBILITY.md](docs/COMPATIBILITY.md) | full platform matrix: agent platforms, operating systems, dependencies, honest multi-model status |
+| [docs/TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md) | sandbox-tested failure modes: verify-install output interpretation, hooks that don't fire, dark-window checklist, plugin-cache staleness |
+| [INSTALL.md](INSTALL.md) | the hybrid bootstrap: install.sh does the deterministic work, agent steps author YOUR taxonomy |
+
 ## Use cases
 
 - You run many projects with different tool needs and your always-on context has bloated.
@@ -127,7 +144,7 @@ a drop-in, unless you have such a monitor.
   matched across Read/Bash/Grep/Glob path fields.
 - Everything here is local: no network calls, no telemetry, no API keys.
 
-## Multi-model portability
+## Multi-model portability (future — Claude Code is the supported target today)
 
 Sectors are model-neutral by construction; `sectors-template/ADAPTERS.md` is the contract.
 Each tool block carries the lines an adapter needs (`cc:` for Claude Code, `mcp:` for any
