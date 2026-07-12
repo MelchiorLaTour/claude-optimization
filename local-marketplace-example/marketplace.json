@@ -1,0 +1,15 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "local",
+  "description": "Local plugin marketplace — repackaged always-on tool clusters made toggleable per project.",
+  "owner": {
+    "name": "Your Name"
+  },
+  "plugins": [
+    {
+      "name": "example-plugin",
+      "description": "An example locally-repackaged plugin (skills + agents + hooks bundled, toggleable per project via enabledPlugins).",
+      "source": "./example-plugin"
+    }
+  ]
+}
