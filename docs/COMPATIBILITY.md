@@ -1,6 +1,6 @@
 # Compatibility
 
-**This is a Claude Code system, for now.** Unlike the companion NewBrain repo (whose bash
+**This is a Claude Code system, for now.** Unlike the companion Data Brain repo (whose bash
 engine runs anywhere), almost everything here is built from Claude Code's own constructs —
 plugins, `enabledPlugins` maps, UserPromptSubmit/PostToolUse hooks, `@`-imported CLAUDE.md
 files, skills. The *ideas* port; the implementation is Claude Code's.
@@ -25,8 +25,8 @@ rather than implied. Today, **Claude Code is the supported target.**
 | OS | Status | Notes |
 |---|---|---|
 | **macOS** | ✅ Supported, live-tested | Development and sandbox-test platform (stock bash 3.2 supported). |
-| **Linux** | 🔶 Should work, untested | All shell is POSIX bash; no macOS-only calls in the shipped scripts. Claude Code itself runs on Linux. |
-| **Windows — WSL** | 🔶 Should work, code-read only | Same reasoning as Linux; run Claude Code inside WSL. Not live-tested. |
+| **Linux** | 🔶 Python core candidate | Cynthia's unit suite is portable Python, but its full setup references local Bash integrations and has not been packaged as a standalone Linux install. |
+| **Windows — WSL** | ⚠️ Planned | The full system depends on Data Brain's WSL port; run the integration in WSL, then record a real acceptance result. |
 | **Windows — Git Bash / native** | ⚠️ / ❌ | The hooks assume a POSIX shell environment; native cmd/PowerShell is out. Use WSL. |
 
 ## Dependencies

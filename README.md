@@ -1,4 +1,4 @@
-# claude-optimization — the "dressing room" for Claude Code
+# Cynthia — the "dressing room" for Claude Code
 
 A blueprint for scoping an AI coding agent's tools and context per project instead of
 carrying everything always-on. Base Claude = a minimal constitution + only the tools useful
@@ -15,11 +15,15 @@ yours.
 
 **Claude Code only, for now** — CLI, desktop app, or IDE extension. Nearly everything here
 is built from Claude Code's own machinery (plugins, hooks, `enabledPlugins`, `@`-imports),
-so unlike the companion NewBrain engine there is no degraded path through other chat apps.
+so unlike the companion Data Brain engine there is no degraded path through other chat apps.
 The multi-model adapters exist and are honest about their untested status. Full matrix:
 [docs/COMPATIBILITY.md](docs/COMPATIBILITY.md).
 
 ## Architecture
+
+## Use visualization
+
+![Use visualization](docs/assets/use-visualization.png)
 
 ```mermaid
 flowchart TD
