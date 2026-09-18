@@ -1,0 +1,27 @@
+name: Windows compatibility
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  windows-python:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest discover -s cynthia/tests -p "test_*.py" -v
+      - run: python -m unittest discover -s windows/tests -p "test_*.py" -v
+
+  wsl-compatible-python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest discover -s cynthia/tests -p "test_*.py" -v
+      - run: python -m unittest discover -s windows/tests -p "test_*.py" -v
